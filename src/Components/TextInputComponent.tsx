@@ -1,7 +1,13 @@
 import React from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 
-function TextInputComponent({ value, onChangeText }: any) {
+function TextInputComponent({
+  value,
+  onChangeText,
+}: {
+  value: string;
+  onChangeText: (text: string) => void;
+}) {
   return (
     <TextInput
       style={{
@@ -11,7 +17,7 @@ function TextInputComponent({ value, onChangeText }: any) {
         marginBottom: 20,
       }}
       value={value}
-      onChangeText={onChangeText()}
+      onChangeText={onChangeText}
     />
   );
 }
