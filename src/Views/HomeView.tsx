@@ -1,14 +1,22 @@
-import React from "react";
-import { StyleSheet, View, Button } from "react-native";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, View, Button, TextInput } from "react-native";
 
+import TextInputComponent from "../Components/TextInputComponent";
 import CounterComponent from "../Components/CounterComponent";
 function HomeView(props: any) {
+  const [value, setValue] = useState("");
+  const [value2, setValue2] = useState("");
+  useEffect(() => {
+    console.log(value);
+  });
   return (
     <View style={{ flexDirection: "column", alignItems: "center" }}>
       <CounterComponent />
       <CounterComponent />
       <CounterComponent />
       <CounterComponent />
+      <TextInputComponent value={value} onChangeText={() => setValue} />
+      <TextInputComponent value={value2} onChangeText={() => setValue2} />
       <CounterComponent />
       <Button
         title={"Aller a la vue liste"}
