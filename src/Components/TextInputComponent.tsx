@@ -1,13 +1,12 @@
 import React from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 
-function TextInputComponent({
-  value,
-  onChangeText,
-}: {
+interface Props {
   value: string;
   onChangeText: (text: string) => void;
-}) {
+  isSecured?: boolean;
+}
+function TextInputComponent({ value, onChangeText, isSecured }: Props) {
   return (
     <TextInput
       style={{
@@ -18,6 +17,7 @@ function TextInputComponent({
       }}
       value={value}
       onChangeText={onChangeText}
+      secureTextEntry={isSecured}
     />
   );
 }
