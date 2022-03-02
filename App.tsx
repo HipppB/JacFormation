@@ -1,13 +1,15 @@
 import { StyleSheet } from "react-native";
 
 import { AuthProvider } from "./src/Context/AuthContext";
-
+import { CounterProvider } from "./src/Context/CounterContex";
 import AuthNavigator from "./src/routes/AuthNavigator";
 export default function App() {
   return (
-    <AuthProvider>
-      <AuthNavigator />
-    </AuthProvider>
+    <CounterProvider>
+      <AuthProvider>
+        <AuthNavigator />
+      </AuthProvider>
+    </CounterProvider>
   );
 }
 
